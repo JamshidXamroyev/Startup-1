@@ -40,7 +40,7 @@ const Taxi = () => {
           <h2 className="text-center text-5xl font-bold text-blue-950">Bizning xizmatlarimiz</h2>
           <div className="flex justify-start items-start flex-wrap gap-4 mt-8">
             {taxiService.map((item, ind) => (
-              <div className="flex flex-col km:w-[24%] nt:w-[30%] xs:w-[46%] w-full relative  my-5 border px-2 duration-300" onClick={() => setName(ind)}>
+              <div className={`flex flex-col km:w-[24%] nt:w-[30%] xs:w-[46%] w-full relative  my-5 border px-2 duration-300 ${name === ind && text === true ? " shadow-lg shadow-black" : ""}`} onClick={() => setName(ind)} >
                 <div className="w-full py-2" onClick={() => setText(prev => !prev)}>
                   <img src={item.img} alt="image" className="rounded-[8px] max-xs:h-[54vh] max-pl:h-[60vh] h-[200px] w-full"/>
                 </div>
@@ -50,7 +50,7 @@ const Taxi = () => {
                     <p className="text-base my-2">{item.description}</p>
                   </div>
                   {name === ind && text === true && (
-                    <div className="absolute p-2 bg-white z-10 shadow-lg w-full left-0">
+                    <div className="absolute p-2 bg-white z-10 w-full left-0 duration-300 shadow-lg shadow-black">
                       <p className="text-center mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, impedit. Totam in odit voluptas voluptates qui, voluptatem provident cumque error esse delectus cum!</p>
                        <Button name={"Tanlash"} link={`/uzun/taxi/${item.type}`}/>
                     </div>
