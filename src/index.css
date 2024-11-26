@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #32bb78;
+    height: 10vh;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 730px) {
+    ::-webkit-scrollbar{
+        width: 4px;
+        height: 10px;
+        background-color: white;
+    }
+}
+
+
+.home__btn:hover{
+    background-color: transparent;
+    border: 1px solid rgb(18, 171, 209);
+}
+
+.home__btn{
+    background: #32bb78;
+    border: 1px solid transparent;
+}
+
+.home__btn::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background-color: rgb(18, 171, 209);
+    width: 0%;
+    height: 100%;
+    transition: all .5s ease-in-out;
+    z-index: -1;
+}
+
+.home__btn:hover::after{
+    width: 100%;
+}
