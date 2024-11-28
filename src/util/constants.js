@@ -66,3 +66,9 @@ export const taxiService = [
     {title: "Samarali", type: "jentra", description: "Maxsus", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXCqruA0jDEbnCMyv0w708I1jB9aE2vkkEzKceY1_jZMHTGQqhevPOcgWKLfJ_m0v30No&usqp=CAU"},
     {title: "Comfort", type: "mers", description: "Maxsus", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/77/d3/ea/vip-cars-available-with.jpg?w=900&h=500&s=1"},
 ]
+
+export const dostafkaService = [
+    {title: "Arzon", description: "loremlo remlorem loremlor emloreml oremlore mloremlo remlor emloreml oremlo remlorem loreml oremlorem loremlor loremlor emloreml oremlore mloremlo remlor emloreml oremlo remlorem loreml oremlorem loremloem ", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStoXlQb7wxwzLwTu8q6X0Gw9dLRCq4VRgG6g&s"},
+    {title: "Ekologik Toza", description: "loremlor emloreml oremlore mloremlo remlorem loremlor emlore mloremlo remlor emloreml oremlo remloreml oremlor oremlore mloremlo remlorem loremlor emlore mloremlo remlor emloreml oremlo remloreml oremlorem ", img: "https://frankfurt.apollo.olxcdn.com/v1/files/mtvilf4q19l4-UZ/image;s=1280x960"},
+    {title: "SAmarali", description: "loremlorem loremlor emloreml oremlore mloremlo remlorem loreml oremlore mlorem loremlor emlore mloremlor emlorem emloreml oremlore mloremlo remlorem loreml oremlore mlorem loremlor emlore mloremlor emlorem",  img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmXKJStbMthfw2GECREKwRnaak9S1jVgjAiA&s"}
+]

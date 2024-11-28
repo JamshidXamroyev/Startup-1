@@ -4,6 +4,7 @@ import chips from '../../assets/imgs/ok-chips-ok-cheep-chips-sweet-corn-flavored
 import phone from '../../assets/imgs/images-removebg-preview.png'
 import AboutDostafka from './About-dostafka'
 import AllProduct from './allProduct'
+import Service from './service'
 
 const Dostavka = () => {
   return (
@@ -26,6 +27,7 @@ const Dostavka = () => {
           </section>
           <AboutDostafka />
           <AllProduct />
+          <Service />
       </>
   )
 }

@@ -3,6 +3,27 @@ import { useState } from "react"
 const Comment = () => {
     const [name, setName] = useState("")
     const [comment, setComment] = useState("")
+
+    const sendTelegramm = (e) => {
+        e.preventDefault()
+        const object = { name, comment }
+        const telegramTokenBot = '7410085185:AAFGWnQccU_r1VQGBuFxykh6EpozLMINIu8'
+		const chatId = '6581009051'
+
+        fetch(`https://api.telegram.org/bot${telegramTokenBot}/sendMessage`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+				chat_id: chatId,
+				text: `
+Name:  ${object.name}
+Coment:  ${object.comment}`,
+			}),
+		}).finally(() => {
+            setComment("")
+            setName("")
+        })
+  }
   return (
     <div className="pl:my-40 my-20 pl:mx-16 mx-4">
         <div className="flex flex-wrap gap-5 max-pl:flex-col">
@@ -73,7 +94,7 @@ const Comment = () => {
             </div>
         </div>
 
-        <form className="mt-8 bg-white p-4 rounded-lg shadow">
+        <form className="mt-8 bg-white p-4 rounded-lg shadow" onSubmit={(e) => sendTelegramm(e)}>
             <h3 className="text-lg font-semibold mb-2">Add a Comment</h3>
             <div className="mb-4">
                 <label for="name" className="block text-gray-700 font-medium mb-2">Name</label>
