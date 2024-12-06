@@ -1,26 +1,36 @@
 import React, { useState } from 'react'
 import { logo, navigation } from '../util/constants'
 import { Link, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
-  const [shadow, setShadow] = useState(false)
   const [navbar, setNavbar] = useState(false)
-
+  const {user} = useSelector(state => state.auth)
   const navigate = useNavigate()
   return (
     <div>
-      <header className={`z-[101] bg-white flex nt:py-0 max-xs:py-3 justify-between items-center w-full fixed top-0 left-0 nt:px-10 px-3 border ${shadow ? "shadow-md shadow-gray-400" : ""}`}>
+      <header className={`z-[101] bg-white flex nt:py-0 max-xs:py-3 justify-between items-center w-full fixed top-0 left-0 nt:px-10 px-3 border`}>
         <div className='nt:w-[16vw] w-[30vw]'>
             <Link to={"/"}>
               <img src={logo} alt="logo" />
             </Link>
         </div>
         <nav className='max-pl:hidden block'>
-          <ul className='flex justify-start items-center gap-7'>{navigation.map(item => (
-            <li key={item.id} className=' duration-300 cursor-pointer hover:text-[#32bb78]'>
-              <a onClick={() => navigate(item.navigate)}>{item.title}</a>
-            </li>
-          ))}</ul>
+          {user ? (
+            <ul className='flex justify-start items-center gap-7'>{navigation.map(item => (
+              <li key={item.id} className=' duration-300 cursor-pointer hover:text-[#32bb78]'>
+                <a onClick={() => navigate(item.navigate)}>{item.title}</a>
+              </li>
+            ))}</ul>
+          ) : (
+            <ul className='flex justify-start items-center gap-7'>
+                  {navigation.slice(0, 1).map(item => (
+                  <li key={item.id} className=' duration-300 cursor-pointer hover:text-[#32bb78]'>
+                    <a onClick={() => navigate(item.navigate)}>{item.title}</a>
+                  </li>
+              ))}
+            </ul>
+          )}
         </nav>
         <div className='max-pl:block hidden'>
           {navbar ? (

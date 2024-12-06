@@ -1,19 +1,17 @@
 import { useState } from "react"
 import  Button  from "../../ui/button"
-import { taxiComfortImgDamas, taxiHomePageImg, taxiService, tayyorTaxi } from "../../util/constants"
-import { useNavigate } from "react-router-dom"
+import { taxiComfortImgDamas, taxiHomePageImg, taxiService } from "../../util/constants"
 
 
 const Taxi = () => {
   const [name, setName] = useState("")
   const [text, setText] = useState(false)
-  const navigate = useNavigate()
 
   return (
     <div className="my-28">
         <section className="flex justify-between items-start pl:flex-row flex-col pl:gap-20 gap-10 pl:mx-10 mx-2 pl:my-32 my-10 pb-8 border-b">
             <div className="pl:w-1/2 w-full">
-                <img src={taxiHomePageImg} alt="image" className="rounded-md" />
+                <img src={taxiHomePageImg} alt="fdgdf" className="rounded-md" />
             </div>
             <div className="flex items-start justify-start pl:gap-2 gap-4 flex-col pl:w-1/2 w-full">
               <p className="text-green-500 text-[20px]">Taxi Xizmatlari</p>
@@ -32,7 +30,7 @@ const Taxi = () => {
               <Button name={"Hozir Bog'lanish"} link={"/contact"}/>
             </div>
             <div className="pl:w-1/2 w-full">
-                <img src={taxiComfortImgDamas} alt="image" className="rounded-[20px]" />
+                <img src={taxiComfortImgDamas} alt="ds" className="rounded-[20px]" />
             </div>
         </section>
 
@@ -42,7 +40,7 @@ const Taxi = () => {
             {taxiService.map((item, ind) => (
               <div className={`flex flex-col km:w-[24%] nt:w-[30%] xs:w-[46%] w-full relative  my-5 border px-2 duration-300 ${name === ind && text === true ? " shadow-lg shadow-black" : ""}`} onClick={() => setName(ind)} >
                 <div className="w-full py-2" onClick={() => setText(prev => !prev)}>
-                  <img src={item.img} alt="image" className="rounded-[8px] max-xs:h-[54vh] max-pl:h-[60vh] h-[200px] w-full"/>
+                  <img src={item.img} alt="dfg" className="rounded-[8px] max-xs:h-[54vh] max-pl:h-[60vh] h-[200px] w-full"/>
                 </div>
                 <div className="px-2 py-2 text-center">
                   <div className="flex justify-between border-t items-center cursor-pointer">
@@ -63,7 +61,7 @@ const Taxi = () => {
         
         <section className="flex justify-between items-start pl:flex-row flex-col pl:gap-20 gap-10 pl:mx-20 mx-2 pl:my-32 my-10 pb-8 border-b">
             <div className="pl:w-1/2 w-full">
-                <img src={"https://car24.uz/wp-content/uploads/2024/01/4c78fd8c-654e-41b8-9c1a-5868d6af06c34-1.jpg"} alt="image" className="rounded-[20px]" />
+                <img src={"https://car24.uz/wp-content/uploads/2024/01/4c78fd8c-654e-41b8-9c1a-5868d6af06c34-1.jpg"} alt="ds" className="rounded-[20px]" />
             </div>
             <div className="flex items-start justify-start pl:gap-2 gap-4 flex-col pl:w-1/2 w-full">
               <p className="text-green-500 text-[22px]">Tayyor Taxi</p>
